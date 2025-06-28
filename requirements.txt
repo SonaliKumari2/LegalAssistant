@@ -3,8 +3,8 @@ PyPDF2>=3.0.0
 python-docx
 langchain
 langchain-google-genai
-faiss-cpu==1.7.4
 google-generativeai
-protobuf  
-tiktoken   
+protobuf
+tiktoken
 chromadb
+
