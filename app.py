@@ -1,4 +1,3 @@
-
 import streamlit as st
 import os
 import json
@@ -6,17 +5,15 @@ from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 import google.generativeai as genai
-from langchain.vectorstores import FAISS
+from langchain.vectorstores import Chroma
 from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from docx import Document
 
 # ======== 1. SETUP: Load secrets securely ========
-# Load Google API key from Streamlit secrets
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
-# Create temporary service account credentials file from secrets
-service_account_info = dict(st.secrets["google_service_account"])  # Convert AttrDict to dict
+service_account_info = dict(st.secrets["google_service_account"])
 with open("temp_google_creds.json", "w") as f:
     json.dump(service_account_info, f)
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "temp_google_creds.json"
@@ -45,8 +42,12 @@ def get_text_chunks(text):
 
 def get_vector_store(text_chunks):
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
-    vector_store = FAISS.from_texts(text_chunks, embedding=embeddings)
-    vector_store.save_local("faiss_index")
+    vector_store = Chroma.from_texts(
+        text_chunks,
+        embedding=embeddings,
+        persist_directory="chroma_index"
+    )
+    vector_store.persist()
 
 def get_conversational_chain(language="English"):
     prompt_template = f"""
@@ -64,7 +65,10 @@ def get_conversational_chain(language="English"):
 
 def user_input(user_question, language="English"):
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
-    new_db = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
+    new_db = Chroma(
+        persist_directory="chroma_index",
+        embedding_function=embeddings
+    )
     docs = new_db.similarity_search(user_question)
     chain = get_conversational_chain(language)
     response = chain({"input_documents": docs, "question": user_question}, return_only_outputs=True)
