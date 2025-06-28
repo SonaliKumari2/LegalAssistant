@@ -7,3 +7,4 @@ faiss-cpu==1.7.4
 google-generativeai
 protobuf  
 tiktoken   
+chromadb
