@@ -1,8 +1,7 @@
 streamlit
-langchain==0.1.16
+langchain==0.1.17
 langchain-core==0.1.52
-langchain-community==0.0.38
-langchain-google-genai==0.0.9
+langchain-google-genai==0.0.5
 google-generativeai==0.8.5
 google-api-python-client
 google-auth
@@ -11,5 +10,6 @@ google-auth-oauthlib
 google-api-core
 pydantic
 python-docx
-faiss-cpu
-tiktoken
+faiss-cpu==1.7.4
+tiktoken==0.6.0
+
