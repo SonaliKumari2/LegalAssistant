@@ -1,6 +1,7 @@
 streamlit
 langchain==0.3.26
 langchain-core==0.3.66
+langchain-community==0.0.38
 langchain-google-genai==2.0.10
 google-generativeai==0.8.5
 google-api-python-client
@@ -12,4 +13,3 @@ pydantic
 python-docx
 faiss-cpu
 tiktoken
-langchain-community==0.0.38
