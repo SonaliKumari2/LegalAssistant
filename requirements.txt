@@ -1,0 +1,9 @@
+streamlit
+PyPDF2>=3.0.0
+python-docx
+langchain
+langchain-google-genai
+faiss-cpu
+google-generativeai
+protobuf  
+tiktoken   
