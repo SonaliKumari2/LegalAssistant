@@ -1,9 +1,0 @@
-streamlit
-PyPDF2
-python-docx
-langchain
-langchain-google-genai
-faiss-cpu
-google-generativeai
-protobuf  
-tiktoken   
