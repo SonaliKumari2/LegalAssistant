@@ -1,0 +1,13 @@
+{
+  "name": "service",
+  "risk_categories": [
+    "Scope Creep",
+    "SLA & Penalties",
+    "Termination Risk",
+    "Payment Terms",
+    "Indemnification",
+    "Limitation of Liability",
+    "IP Rights",
+    "Subcontracting"
+  ]
+}

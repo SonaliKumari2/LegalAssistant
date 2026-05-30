@@ -1,0 +1,13 @@
+{
+  "name": "vendor",
+  "risk_categories": [
+    "Unlimited Liability",
+    "SLA Penalties",
+    "Indemnification",
+    "Payment Terms",
+    "Termination Risk",
+    "IP Ownership",
+    "Data Privacy Risk",
+    "Audit Rights"
+  ]
+}

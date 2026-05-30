@@ -1,0 +1,13 @@
+{
+  "name": "lease",
+  "risk_categories": [
+    "Automatic Renewal",
+    "Security Deposit Forfeiture",
+    "Maintenance Obligations",
+    "Subletting Restrictions",
+    "Termination Risk",
+    "Rent Escalation",
+    "Jurisdiction Risk",
+    "Damage Liability"
+  ]
+}

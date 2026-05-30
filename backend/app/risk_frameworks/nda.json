@@ -1,0 +1,12 @@
+{
+  "name": "nda",
+  "risk_categories": [
+    "Overbroad Confidentiality Definition",
+    "Perpetual Obligations",
+    "One-sided Obligations",
+    "Residual Knowledge Carve-out",
+    "Injunctive Relief",
+    "Return/Destruction of Data",
+    "Jurisdiction Risk"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "employment",
+  "risk_categories": [
+    "Termination Risk",
+    "Non-compete",
+    "Unlimited Liability",
+    "One-sided Obligations",
+    "Automatic Renewal",
+    "Indemnification",
+    "Jurisdiction Risk",
+    "Data Privacy Risk",
+    "IP Assignment",
+    "Probation & Notice Period"
+  ]
+}

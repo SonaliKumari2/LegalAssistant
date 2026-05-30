@@ -1,0 +1,14 @@
+{
+  "name": "general",
+  "risk_categories": [
+    "Termination Risk",
+    "Unlimited Liability",
+    "Automatic Renewal",
+    "One-sided Obligations",
+    "Indemnification",
+    "Jurisdiction Risk",
+    "Arbitration Clause",
+    "Confidentiality",
+    "Data Privacy Risk"
+  ]
+}
